@@ -14,7 +14,7 @@ namespace FlatEditor
 
         public static GUIStyle FontAwesomeStyle
         {
-            get { return      new GUIStyle(EditorStyles.label)
+            get { return new GUIStyle(EditorStyles.label)
             {
                 font = FlatFonts.FontAwesome,
                 alignment = TextAnchor.MiddleCenter,

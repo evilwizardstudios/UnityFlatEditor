@@ -1,8 +1,11 @@
-﻿using FlatEditor.Buttons;
-using FlatEditor.Input;
+﻿using FlatEditor.Input;
+using FlatEditor.Popups;
 using FlatEditor.Typography;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
+using Navigation = FlatEditor.Buttons.Navigation;
+using PopupWindow = FlatEditor.Popups.FlatPopupWindow;
 
 namespace FlatEditor.Example
 {
@@ -10,6 +13,8 @@ namespace FlatEditor.Example
     public class ExampleInspector : Editor
     {
         private ExampleComponent _component;
+
+        private Rect _windowRect = new Rect(100, 100, 200, 200);
         
         public override void OnInspectorGUI()
         {
@@ -17,7 +22,11 @@ namespace FlatEditor.Example
             if (_component == null) return;
             GUI.skin = FlatEditor.DefaultPanelSkin;
 
-            _component.navSelection = Navigation.NavPills(new []{"Typography", "Input", "Buttons"}, new string[3], new string[3], _component.navSelection, Colors.Info);
+            GUILayout.BeginArea(_windowRect);
+            _windowRect = GUILayout.Window(1, _windowRect, DoWindow, "Hi There");
+            GUILayout.EndArea();
+
+            _component.navSelection = Navigation.NavPills(new []{"Typography", "Input", "Buttons", "Dropdowns", "Tooltips", "Media Layout"}, new string[3], new string[3], _component.navSelection, Colors.Info);
 
             switch (_component.navSelection)
             {
@@ -30,8 +39,41 @@ namespace FlatEditor.Example
                 case 2:
                     ButtonExamples();
                     break;
+                case 3:
+                    DropdownExamples();
+                    break;
+                case 4:
+                    TooltipExamples();
+                    break;
+                case 5 :
+                    MediaLayoutExamples();
+                    break;
             }
 
+
+        }
+
+        private void MediaLayoutExamples()
+        {
+        }
+
+        private void TooltipExamples()
+        {
+            var rect = new Rect(200,200,200,200);
+            GUI.DrawTexture(rect, Drawing.Pixel, ScaleMode.StretchToFill);
+
+            Repaint();
+
+        }
+
+        void DoWindow(int unusedWindowID)
+        {
+            GUILayout.Button("Hi");
+            GUI.DragWindow();
+        }
+
+        private void DropdownExamples()
+        {
         }
 
         private void ButtonExamples()
