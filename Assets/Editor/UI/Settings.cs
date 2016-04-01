@@ -10,9 +10,6 @@ namespace FlatEditor
     {
         public const int MaxColumns = 12;
 
-        public const int HorizontalMargin = 20;
-        public const int VerticalMargin = 10;
-
         public const bool Verbose = true;
 
 

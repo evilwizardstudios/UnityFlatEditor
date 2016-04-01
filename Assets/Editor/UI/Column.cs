@@ -4,21 +4,25 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace FlatEditor
+namespace FlatEditor.Responsive
 {
-
+    /// <summary>
+    /// By default, columns are described in units of width out of 12 (like Bootstrap). Columns must be declared within a Row.Start().
+    /// </summary>
     public class Column
     {
+        private Rect columnRect;
+
         // in terms of row units, xs-sm-md-lg
         private byte[] widths;
         private byte[] offsets;
 
-        public Column(byte width, byte offset)
+        public Column(byte width, byte offset = 0)
         {
             // catch impossible width/offset combinations
-            if (width < 1 || width + offset > 12)
+            if (width + offset > 12)
             {
-                throw new Exception("FlatEditor: Columns must be wider than width 0 and cannot be larger than 12 (including offsets)");
+                throw new Exception("FlatEditor: Columns cannot be larger than width 12 (including offsets)");
             }
 
             widths = new byte[4];
@@ -47,9 +51,9 @@ namespace FlatEditor
         /// </summary>
         public void SetSize(ScreenSize size, byte width, byte offset = 0)
         {
-            if (width < 1 || width + offset > 12)
+            if (width + offset > 12)
             {
-                throw new Exception("FlatEditor: Columns must be wider than width 0 and cannot be larger than 12 (including offsets)");
+                throw new Exception("FlatEditor: Columns width cannot be larger than 12 (including offsets)"); 
             }
 
             switch (size)
@@ -73,37 +77,50 @@ namespace FlatEditor
             }
         }
 
-        public int Width()
+        public int Width
         {
-            return widths[(int) Responsive.CurrentScreenSize];
+            get { return widths[(int) Grid.CurrentScreenSize]; }
         }
 
-        public int PixelWidth()
+        public float PixelWidth
         {
-            return (Width()/12)*Screen.width;
+            get { return (Width/12f)*(Screen.width); }
         }
 
-        public int Offset()
+        public int Offset
         {
-            return offsets[(int)Responsive.CurrentScreenSize];
+            get { return offsets[(int) Grid.CurrentScreenSize]; }
         }
 
-        public int PixelOffset()
+        public float PixelOffset
         {
-            return (Offset() / 12) * Screen.width;
+            get { return (Offset/12f)*(Screen.width); }
         }
 
         public void Start()
         {
-            // modify column placement based on screen size
-            Responsive.NewColumn(this);
+            var row = Grid.OpenRow;
 
+            if (row.ColumnPosition + Width + Offset > 12) row.Break();
 
+            if (Offset > 0) DrawOffset(row);
+
+            columnRect = EditorGUILayout.BeginVertical(GUILayout.Width(PixelWidth));
         }
 
         public void End()
         {
+            EditorGUILayout.EndVertical();
+            Grid.OpenRow.ColumnPosition += Width;
+        }
 
+        private void DrawOffset(Row row)
+        {
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.Space(PixelOffset);
+            EditorGUILayout.EndHorizontal();
+
+            row.ColumnPosition += Offset;
         }
     }
 

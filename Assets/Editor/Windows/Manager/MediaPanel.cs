@@ -20,19 +20,19 @@ namespace FlatEditor
         public virtual void Show()
         {
             //initial panel L/R
-            EditorGUILayout.BeginHorizontal();
+            GUILayout.BeginHorizontal();
             {
                 //identifier icon
                 _icon.Icon(EditorGUILayout.GetControlRect(GUILayout.Width(LeftColumnPixelWidth)));
 
                 //content panel
-                EditorGUILayout.BeginVertical();
+                GUILayout.BeginVertical();
                 {
                     Content();
                 }
-                EditorGUILayout.EndVertical();
+                GUILayout.EndVertical();
             }
-            EditorGUILayout.EndHorizontal();
+            GUILayout.EndHorizontal();
 
             GUILayout.Space(10);
         }

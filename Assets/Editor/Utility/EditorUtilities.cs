@@ -66,7 +66,7 @@ namespace FlatEditor
                 ? Color.Lerp(Color.white, Color.clear, 0.4f)
                 : Color.Lerp(Color.white, Color.clear, 0.8f);
             GUI.color = thumbColor;
-            scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition, false, false);
+            scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, false);
             GUI.color = Color.white;
             return scrollPosition;
         }
