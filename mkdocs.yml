@@ -1,4 +1,20 @@
 site_name: Flat Editor for Unity
 site_description: Open-source UI/UX tools for Asset authors
 site_author: Evil Wizard Studios
-theme_dir: theme
+theme: 'material'
+repo_name: 'GitHub'
+repo_url: 'https://git.io/vVZdI'
+extra:
+  version: '0.1.2'
+  logo: 'img/logo.png'
+  author:
+    github: 'evilwizardstudios'
+    twitter: 'evilwizards'
+  palette:
+    primary: 'orange'
+    accent: 'pink'
+pages:
+  - Home: index.md
+  - Getting Started: start.md
+  - Components: components.md
+  - Customize: customize.md

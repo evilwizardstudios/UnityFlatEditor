@@ -1,0 +1,199 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Flat Editor\n\n\nFlat Editor is an open-source UI framework for the Unity Game Engine Editor.\n  It's designed primarily for Asset developers, but it's for everyone who wants it.\n\n\nFlat Editor is a \nblatant ripoff\n\n  \nhomage\n to \nBootstrap\n. As  such attempts to implement\n  and build off of Bootstrap's functionality as much as possible.\n\n\nSupport Flat Editor\n\n\nFlat Editor is open-source, under the\n  \nGNU General Public License v3\n. The\n  absolute best way to  support Flat Editor is to contribute!\n\n\n[[GITHUB LINK]]\n\n\nFix it, clean it up, fork it and hack on it -- do whatever, just\n  \nfollow the GPL conditions\n\n\n(disclose the source, note changes, and keep the GPL, basically).\n\n\nBetter and easier-to-build Asset UI means better easier-to-use Unity Assets,\n  and that means better games, and everyone generally just has a better time and\n  more fun.\n\n\nIf you like Flat Editor and want to show your support (but don't have the time\n  to contribute) consider buying me a coffee and I will do my best to turn that\n  caffeine into useful code:\n\n\nDonate\n\n\nRoadmap", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#flat-editor", 
+            "text": "Flat Editor is an open-source UI framework for the Unity Game Engine Editor.\n  It's designed primarily for Asset developers, but it's for everyone who wants it.  Flat Editor is a  blatant ripoff \n   homage  to  Bootstrap . As  such attempts to implement\n  and build off of Bootstrap's functionality as much as possible.", 
+            "title": "Flat Editor"
+        }, 
+        {
+            "location": "/#support-flat-editor", 
+            "text": "Flat Editor is open-source, under the\n   GNU General Public License v3 . The\n  absolute best way to  support Flat Editor is to contribute!  [[GITHUB LINK]]  Fix it, clean it up, fork it and hack on it -- do whatever, just\n   follow the GPL conditions  (disclose the source, note changes, and keep the GPL, basically).  Better and easier-to-build Asset UI means better easier-to-use Unity Assets,\n  and that means better games, and everyone generally just has a better time and\n  more fun.  If you like Flat Editor and want to show your support (but don't have the time\n  to contribute) consider buying me a coffee and I will do my best to turn that\n  caffeine into useful code:  Donate", 
+            "title": "Support Flat Editor"
+        }, 
+        {
+            "location": "/#roadmap", 
+            "text": "", 
+            "title": "Roadmap"
+        }, 
+        {
+            "location": "/start/", 
+            "text": "Download\n\n\nSet-up\n\n\nTemplates\n\n\nInspector\n\n\nWindow\n\n\nPopups\n\n\nLicense", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/start/#download", 
+            "text": "", 
+            "title": "Download"
+        }, 
+        {
+            "location": "/start/#set-up", 
+            "text": "", 
+            "title": "Set-up"
+        }, 
+        {
+            "location": "/start/#templates", 
+            "text": "", 
+            "title": "Templates"
+        }, 
+        {
+            "location": "/start/#inspector", 
+            "text": "", 
+            "title": "Inspector"
+        }, 
+        {
+            "location": "/start/#window", 
+            "text": "", 
+            "title": "Window"
+        }, 
+        {
+            "location": "/start/#popups", 
+            "text": "", 
+            "title": "Popups"
+        }, 
+        {
+            "location": "/start/#license", 
+            "text": "", 
+            "title": "License"
+        }, 
+        {
+            "location": "/components/", 
+            "text": "Overview\n\n\nContainers\n\n\nColumns\n\n\nGrids\n\n\nGlyphs\n\n\nTypography\n\n\nHeadings\n\n\nBody\n\n\nBlockquotes\n\n\nTables\n\n\nForms\n\n\nCharts\n\n\nPanels\n\n\nAlerts\n\n\nWells\n\n\nButtons\n\n\nDropdowns\n\n\nTooltips\n\n\nPopovers\n\n\nNavs\n\n\nPagination\n\n\nBadges\n\n\nBars\n\n\nProgress Bars\n\n\nObjects", 
+            "title": "Components"
+        }, 
+        {
+            "location": "/components/#overview", 
+            "text": "", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/components/#containers", 
+            "text": "", 
+            "title": "Containers"
+        }, 
+        {
+            "location": "/components/#columns", 
+            "text": "", 
+            "title": "Columns"
+        }, 
+        {
+            "location": "/components/#grids", 
+            "text": "", 
+            "title": "Grids"
+        }, 
+        {
+            "location": "/components/#glyphs", 
+            "text": "", 
+            "title": "Glyphs"
+        }, 
+        {
+            "location": "/components/#typography", 
+            "text": "", 
+            "title": "Typography"
+        }, 
+        {
+            "location": "/components/#headings", 
+            "text": "", 
+            "title": "Headings"
+        }, 
+        {
+            "location": "/components/#body", 
+            "text": "", 
+            "title": "Body"
+        }, 
+        {
+            "location": "/components/#blockquotes", 
+            "text": "", 
+            "title": "Blockquotes"
+        }, 
+        {
+            "location": "/components/#tables", 
+            "text": "", 
+            "title": "Tables"
+        }, 
+        {
+            "location": "/components/#forms", 
+            "text": "", 
+            "title": "Forms"
+        }, 
+        {
+            "location": "/components/#charts", 
+            "text": "", 
+            "title": "Charts"
+        }, 
+        {
+            "location": "/components/#panels", 
+            "text": "", 
+            "title": "Panels"
+        }, 
+        {
+            "location": "/components/#alerts", 
+            "text": "", 
+            "title": "Alerts"
+        }, 
+        {
+            "location": "/components/#wells", 
+            "text": "", 
+            "title": "Wells"
+        }, 
+        {
+            "location": "/components/#buttons", 
+            "text": "", 
+            "title": "Buttons"
+        }, 
+        {
+            "location": "/components/#dropdowns", 
+            "text": "", 
+            "title": "Dropdowns"
+        }, 
+        {
+            "location": "/components/#tooltips", 
+            "text": "", 
+            "title": "Tooltips"
+        }, 
+        {
+            "location": "/components/#popovers", 
+            "text": "", 
+            "title": "Popovers"
+        }, 
+        {
+            "location": "/components/#navs", 
+            "text": "", 
+            "title": "Navs"
+        }, 
+        {
+            "location": "/components/#pagination", 
+            "text": "", 
+            "title": "Pagination"
+        }, 
+        {
+            "location": "/components/#badges", 
+            "text": "", 
+            "title": "Badges"
+        }, 
+        {
+            "location": "/components/#bars", 
+            "text": "", 
+            "title": "Bars"
+        }, 
+        {
+            "location": "/components/#progress-bars", 
+            "text": "", 
+            "title": "Progress Bars"
+        }, 
+        {
+            "location": "/components/#objects", 
+            "text": "", 
+            "title": "Objects"
+        }, 
+        {
+            "location": "/customize/", 
+            "text": "", 
+            "title": "Customize"
+        }
+    ]
+}
