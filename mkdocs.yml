@@ -13,8 +13,21 @@ extra:
   palette:
     primary: 'orange'
     accent: 'pink'
+    code: 'pink'
+  font:
+    text: 'Lato'
+    code: 'Source Code Pro'
 pages:
   - Home: index.md
   - Getting Started: start.md
-  - Components: components.md
+  - The Grid: grid.md
+  - Glyphs & Typography: typography.md
+  - Forms: forms.md
+  - Panels & Alerts: panels.md
+  - Buttons & Navigation: buttonsnavs.md
+  - Unity Objects: objects.md
   - Customize: customize.md
+  - Code: code.md
+markdown_extensions:
+  - admonition
+  - codehilite(css_class=code)

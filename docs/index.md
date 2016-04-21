@@ -1,4 +1,4 @@
-# Flat Editor
+## About Flat Editor
   Flat Editor is an open-source UI framework for the Unity Game Engine Editor.
   It's designed primarily for Asset developers, but it's for everyone who wants it.
 
@@ -11,7 +11,7 @@
   [GNU General Public License v3](http://www.gnu.org/licenses/gpl-3.0.txt). The
   absolute best way to  support Flat Editor is to contribute!
 
-  [[GITHUB LINK]]
+  [Github Repository](https://github.com/evilwizardstudios/UnityFlatEditor)
 
   Fix it, clean it up, fork it and hack on it -- do whatever, just
   [follow the GPL conditions](http://choosealicense.com/licenses/gpl-3.0/)
@@ -29,3 +29,12 @@
   [Donate](http://paypal.me/jarena3)
 
 ## Roadmap
+
+### Short Term
++ Finish these docs
+
+### Long Term
++ Less verbose column management
++ Font-embedded Glyphs
++ Multiple concurrent Glyph sources
++ Barebones (no styling, layout only) mode
