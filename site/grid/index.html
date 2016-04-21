@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Getting Started - Flat Editor for Unity</title>
+        <title>The Grid - Flat Editor for Unity</title>
       
       
       
@@ -96,7 +96,7 @@
             
           </span>
         
-        Getting Started
+        The Grid
       </div>
     </div>
     
@@ -189,23 +189,45 @@
           
             
   <li>
-    <a class="current" title="Getting Started" href="./">
+    <a class="" title="Getting Started" href="../start/">
       Getting Started
     </a>
-    
-      
-        
-      
-      
     
   </li>
 
           
             
   <li>
-    <a class="" title="The Grid" href="../grid/">
+    <a class="current" title="The Grid" href="./">
       The Grid
     </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Rows" href="#rows">
+                Rows
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Columns" href="#columns">
+                Columns
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Grid" href="#grid">
+                Grid
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -304,13 +326,121 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="download">Download</h1>
-<h1 id="set-up">Set-up</h1>
-<h1 id="templates">Templates</h1>
-<h2 id="inspector">Inspector</h2>
-<h2 id="window">Window</h2>
-<h2 id="popups">Popups</h2>
-<h1 id="license">License</h1>
+          <div class="admonition note">
+<p class="admonition-title">OnGUI()</p>
+<p>All FlatEditor code must be called in the OnGUI() method of an EditorWindow or
+Inspector.</p>
+</div>
+<h1 id="containers">Containers</h1>
+<p>Flat Editor replicates the responsive Bootstrap grid. Grids lay out window or
+inspector content in columns and rows:</p>
+<div class="code"><pre><span></span><span class="k">void</span> <span class="nf">OnGUI</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Row</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+
+    <span class="kt">var</span> <span class="n">columnA</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Column</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">0</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">columnB</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Column</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">0</span><span class="p">);</span>
+
+    <span class="n">columnA</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+      <span class="n">Typography</span><span class="p">.</span><span class="n">Title</span><span class="p">(</span><span class="s">&quot;This is Column A&quot;</span><span class="p">);</span>
+    <span class="n">columnA</span><span class="p">.</span><span class="n">End</span><span class="p">();</span>
+
+    <span class="n">columnB</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+      <span class="n">Typography</span><span class="p">.</span><span class="n">Title</span><span class="p">(</span><span class="s">&quot;This is Column B&quot;</span><span class="p">);</span>
+    <span class="n">columnB</span><span class="p">.</span><span class="n">End</span><span class="p">();</span>
+
+  <span class="n">Row</span><span class="p">.</span><span class="n">End</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="rows">Rows</h2>
+<p>Rows are parent containers for columns, they track column position
+(GUILayoutOption won't work for our columns) and enforce horizontal margins.</p>
+<p>Rows will automatically break if a line of columns extends beyond 12 units.
+However, the rows never "lose" column references - they preserve column
+lengths.</p>
+<p>Rows are opened and closed by static functions <code>Row.Start()</code> and <code>Row.End()</code>
+Rows <strong>must</strong> be closed with <code>Row.End()</code> or Unity will throw a GUI error.</p>
+<p><strong>Rows cannot be nested</strong></p>
+<div class="code"><pre><span></span><span class="k">void</span> <span class="nf">OnGUI</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Row</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+    <span class="c1">//Row content</span>
+  <span class="n">Row</span><span class="p">.</span><span class="n">End</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="columns">Columns</h2>
+<p>Columns are objects that handle automatic layout-ing of GUI content,
+arranging the stuff in them into neat, regular columns. By default, columns are
+described in units of width out of 12 (like Bootstrap), and are <em>reactive</em>, meaning
+they will change their width based on window size.</p>
+<p>Columns take two <code>bytes</code> as parameters in their constructor. The first is the
+<strong>width</strong> value of the column: how many units (out of 12) the column content will
+cover. The second is the <strong>offset</strong> value of the column: how many column units of
+blank space will precede the column. A column's width and offset combined <em>cannot
+exceed 12</em>.</p>
+<div class="code"><pre><span></span><span class="c1">//This column&#39;s content will span the entire Row</span>
+<span class="kt">var</span> <span class="n">fullColumn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Column</span><span class="p">(</span><span class="m">12</span><span class="p">,</span><span class="m">0</span><span class="p">);</span>
+
+<span class="c1">//This columns&#39;s content will span the left half of the Row</span>
+<span class="kt">var</span> <span class="n">halfColumn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Column</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">0</span><span class="p">);</span>
+
+<span class="c1">//This column&#39;s content will span the right half of the Row</span>
+<span class="kt">var</span> <span class="n">offsetColumn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Column</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">6</span><span class="p">);</span>
+
+<span class="c1">//This column&#39;s content will span the middle third of the Row</span>
+<span class="kt">var</span> <span class="n">middleColumn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Column</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">);</span>
+
+<span class="c1">//This column&#39;s width + offset = 16, so Flat Editor will throw an error</span>
+<span class="kt">var</span> <span class="n">invalidColumn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Column</span><span class="p">(</span><span class="m">8</span><span class="p">,</span><span class="m">8</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Columns react to <a href="../customize#breakpoints">window size breakpoints</a>, and can have
+specific widths per breakpoint. These widths are set by the <code>SetSize</code> method,
+which takes three parameters: a <code>ScreenSize</code> breakpoint, a width <code>byte</code>, and
+an offset <code>byte</code>:</p>
+<div class="code"><pre><span></span><span class="kt">var</span> <span class="n">myColumn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Column</span><span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="m">4</span><span class="p">);</span>
+
+<span class="n">myColumn</span><span class="p">.</span><span class="n">SetSize</span><span class="p">(</span><span class="n">ScreenSize</span><span class="p">.</span><span class="n">xs</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+</pre></div>
+
+
+<p><code>myColumn</code> will be 8 units wide and have an offset of 4 when the window width
+is larger than the <em>xs</em> breakpoint (768px by default). If the window width is
+<em>less than</em> the <em>xs</em> breakpoint, the column will be 12 units wide with no offset.</p>
+<p>Columns must <code>.Start()</code> and <code>.End()</code> within a <a href="#Rows">Row</a>.</p>
+<h2 id="grid">Grid</h2>
+<p>The Grid is a utility class that manages the grid, but also contains static methods
+that can can return useful information, specifically:</p>
+<div class="code"><pre><span></span><span class="c1">// Returns the currently active Row</span>
+<span class="n">Grid</span><span class="p">.</span><span class="n">OpenRow</span><span class="p">()</span>
+
+<span class="c1">// Returns the current ScreenSize, based on breakpoint</span>
+<span class="n">Grid</span><span class="p">.</span><span class="n">CurrentScreenSize</span><span class="p">()</span>
+</pre></div>
+
+
+<p><code>CurrentScreenSize()</code> is useful as a way to change grid content based on ScreenSize
+(reducing font size or abbreviating a label, for example).</p>
+<h1 id="forms">Forms</h1>
+<h1 id="charts">Charts</h1>
+<h1 id="panels">Panels</h1>
+<h2 id="alerts">Alerts</h2>
+<h2 id="wells">Wells</h2>
+<h1 id="buttons">Buttons</h1>
+<h2 id="dropdowns">Dropdowns</h2>
+<h2 id="tooltips">Tooltips</h2>
+<h2 id="popovers">Popovers</h2>
+<h1 id="navs">Navs</h1>
+<h1 id="pagination">Pagination</h1>
+<h1 id="badges">Badges</h1>
+<h1 id="bars">Bars</h1>
+<h2 id="progress-bars">Progress Bars</h2>
+<h1 id="objects">Objects</h1>
           <aside class="copyright" role="note">
             
             Documentation built with
@@ -327,7 +457,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href=".." title="Home">
+        <a href="../start/" title="Getting Started">
           <span class="direction">
             Previous
           </span>
@@ -337,7 +467,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                Home
+                Getting Started
               </div>
             </div>
           </div>
@@ -346,14 +476,14 @@
     </div>
     <div class="next">
       
-        <a href="../grid/" title="The Grid">
+        <a href="../typography/" title="Glyphs & Typography">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                The Grid
+                Glyphs & Typography
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">

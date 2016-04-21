@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-03-31</lastmod>
+     <lastmod>2016-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,15 +12,55 @@
     
     <url>
      <loc>None/start/</loc>
-     <lastmod>2016-03-31</lastmod>
+     <lastmod>2016-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/components/</loc>
-     <lastmod>2016-03-31</lastmod>
+     <loc>None/grid/</loc>
+     <lastmod>2016-04-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/typography/</loc>
+     <lastmod>2016-04-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/forms/</loc>
+     <lastmod>2016-04-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/panels/</loc>
+     <lastmod>2016-04-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/buttonsnavs/</loc>
+     <lastmod>2016-04-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/objects/</loc>
+     <lastmod>2016-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +68,15 @@
     
     <url>
      <loc>None/customize/</loc>
-     <lastmod>2016-03-31</lastmod>
+     <lastmod>2016-04-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/code/</loc>
+     <lastmod>2016-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

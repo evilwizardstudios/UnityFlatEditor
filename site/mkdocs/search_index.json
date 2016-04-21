@@ -2,23 +2,33 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Flat Editor\n\n\nFlat Editor is an open-source UI framework for the Unity Game Engine Editor.\n  It's designed primarily for Asset developers, but it's for everyone who wants it.\n\n\nFlat Editor is a \nblatant ripoff\n\n  \nhomage\n to \nBootstrap\n. As  such attempts to implement\n  and build off of Bootstrap's functionality as much as possible.\n\n\nSupport Flat Editor\n\n\nFlat Editor is open-source, under the\n  \nGNU General Public License v3\n. The\n  absolute best way to  support Flat Editor is to contribute!\n\n\n[[GITHUB LINK]]\n\n\nFix it, clean it up, fork it and hack on it -- do whatever, just\n  \nfollow the GPL conditions\n\n\n(disclose the source, note changes, and keep the GPL, basically).\n\n\nBetter and easier-to-build Asset UI means better easier-to-use Unity Assets,\n  and that means better games, and everyone generally just has a better time and\n  more fun.\n\n\nIf you like Flat Editor and want to show your support (but don't have the time\n  to contribute) consider buying me a coffee and I will do my best to turn that\n  caffeine into useful code:\n\n\nDonate\n\n\nRoadmap", 
+            "text": "About Flat Editor\n\n\nFlat Editor is an open-source UI framework for the Unity Game Engine Editor.\n  It's designed primarily for Asset developers, but it's for everyone who wants it.\n\n\nFlat Editor is a \nblatant ripoff\n\n  \nhomage\n to \nBootstrap\n. As  such attempts to implement\n  and build off of Bootstrap's functionality as much as possible.\n\n\nSupport Flat Editor\n\n\nFlat Editor is open-source, under the\n  \nGNU General Public License v3\n. The\n  absolute best way to  support Flat Editor is to contribute!\n\n\nGithub Repository\n\n\nFix it, clean it up, fork it and hack on it -- do whatever, just\n  \nfollow the GPL conditions\n\n\n(disclose the source, note changes, and keep the GPL, basically).\n\n\nBetter and easier-to-build Asset UI means better easier-to-use Unity Assets,\n  and that means better games, and everyone generally just has a better time and\n  more fun.\n\n\nIf you like Flat Editor and want to show your support (but don't have the time\n  to contribute) consider buying me a coffee and I will do my best to turn that\n  caffeine into useful code:\n\n\nDonate\n\n\nRoadmap\n\n\nShort Term\n\n\n\n\nFinish these docs\n\n\n\n\nLong Term\n\n\n\n\nLess verbose column management\n\n\nFont-embedded Glyphs\n\n\nMultiple concurrent Glyph sources\n\n\nBarebones (no styling, layout only) mode", 
             "title": "Home"
         }, 
         {
-            "location": "/#flat-editor", 
+            "location": "/#about-flat-editor", 
             "text": "Flat Editor is an open-source UI framework for the Unity Game Engine Editor.\n  It's designed primarily for Asset developers, but it's for everyone who wants it.  Flat Editor is a  blatant ripoff \n   homage  to  Bootstrap . As  such attempts to implement\n  and build off of Bootstrap's functionality as much as possible.", 
-            "title": "Flat Editor"
+            "title": "About Flat Editor"
         }, 
         {
             "location": "/#support-flat-editor", 
-            "text": "Flat Editor is open-source, under the\n   GNU General Public License v3 . The\n  absolute best way to  support Flat Editor is to contribute!  [[GITHUB LINK]]  Fix it, clean it up, fork it and hack on it -- do whatever, just\n   follow the GPL conditions  (disclose the source, note changes, and keep the GPL, basically).  Better and easier-to-build Asset UI means better easier-to-use Unity Assets,\n  and that means better games, and everyone generally just has a better time and\n  more fun.  If you like Flat Editor and want to show your support (but don't have the time\n  to contribute) consider buying me a coffee and I will do my best to turn that\n  caffeine into useful code:  Donate", 
+            "text": "Flat Editor is open-source, under the\n   GNU General Public License v3 . The\n  absolute best way to  support Flat Editor is to contribute!  Github Repository  Fix it, clean it up, fork it and hack on it -- do whatever, just\n   follow the GPL conditions  (disclose the source, note changes, and keep the GPL, basically).  Better and easier-to-build Asset UI means better easier-to-use Unity Assets,\n  and that means better games, and everyone generally just has a better time and\n  more fun.  If you like Flat Editor and want to show your support (but don't have the time\n  to contribute) consider buying me a coffee and I will do my best to turn that\n  caffeine into useful code:  Donate", 
             "title": "Support Flat Editor"
         }, 
         {
             "location": "/#roadmap", 
             "text": "", 
             "title": "Roadmap"
+        }, 
+        {
+            "location": "/#short-term", 
+            "text": "Finish these docs", 
+            "title": "Short Term"
+        }, 
+        {
+            "location": "/#long-term", 
+            "text": "Less verbose column management  Font-embedded Glyphs  Multiple concurrent Glyph sources  Barebones (no styling, layout only) mode", 
+            "title": "Long Term"
         }, 
         {
             "location": "/start/", 
@@ -61,139 +71,169 @@
             "title": "License"
         }, 
         {
-            "location": "/components/", 
-            "text": "Overview\n\n\nContainers\n\n\nColumns\n\n\nGrids\n\n\nGlyphs\n\n\nTypography\n\n\nHeadings\n\n\nBody\n\n\nBlockquotes\n\n\nTables\n\n\nForms\n\n\nCharts\n\n\nPanels\n\n\nAlerts\n\n\nWells\n\n\nButtons\n\n\nDropdowns\n\n\nTooltips\n\n\nPopovers\n\n\nNavs\n\n\nPagination\n\n\nBadges\n\n\nBars\n\n\nProgress Bars\n\n\nObjects", 
-            "title": "Components"
+            "location": "/grid/", 
+            "text": "OnGUI()\n\n\nAll FlatEditor code must be called in the OnGUI() method of an EditorWindow or\nInspector.\n\n\n\n\nContainers\n\n\nFlat Editor replicates the responsive Bootstrap grid. Grids lay out window or\ninspector content in columns and rows:\n\n\nvoid\n \nOnGUI\n()\n\n\n{\n\n  \nRow\n.\nStart\n();\n\n\n    \nvar\n \ncolumnA\n \n=\n \nnew\n \nColumn\n(\n6\n,\n0\n);\n\n    \nvar\n \ncolumnB\n \n=\n \nnew\n \nColumn\n(\n6\n,\n0\n);\n\n\n    \ncolumnA\n.\nStart\n();\n\n      \nTypography\n.\nTitle\n(\nThis is Column A\n);\n\n    \ncolumnA\n.\nEnd\n();\n\n\n    \ncolumnB\n.\nStart\n();\n\n      \nTypography\n.\nTitle\n(\nThis is Column B\n);\n\n    \ncolumnB\n.\nEnd\n();\n\n\n  \nRow\n.\nEnd\n();\n\n\n}\n\n\n\n\n\n\nRows\n\n\nRows are parent containers for columns, they track column position\n(GUILayoutOption won't work for our columns) and enforce horizontal margins.\n\n\nRows will automatically break if a line of columns extends beyond 12 units.\nHowever, the rows never \"lose\" column references - they preserve column\nlengths.\n\n\nRows are opened and closed by static functions \nRow.Start()\n and \nRow.End()\n\nRows \nmust\n be closed with \nRow.End()\n or Unity will throw a GUI error.\n\n\nRows cannot be nested\n\n\nvoid\n \nOnGUI\n()\n\n\n{\n\n  \nRow\n.\nStart\n();\n\n    \n//Row content\n\n  \nRow\n.\nEnd\n();\n\n\n}\n\n\n\n\n\n\nColumns\n\n\nColumns are objects that handle automatic layout-ing of GUI content,\narranging the stuff in them into neat, regular columns. By default, columns are\ndescribed in units of width out of 12 (like Bootstrap), and are \nreactive\n, meaning\nthey will change their width based on window size.\n\n\nColumns take two \nbytes\n as parameters in their constructor. The first is the\n\nwidth\n value of the column: how many units (out of 12) the column content will\ncover. The second is the \noffset\n value of the column: how many column units of\nblank space will precede the column. A column's width and offset combined \ncannot\nexceed 12\n.\n\n\n//This column\ns content will span the entire Row\n\n\nvar\n \nfullColumn\n \n=\n \nnew\n \nColumn\n(\n12\n,\n0\n);\n\n\n\n//This columns\ns content will span the left half of the Row\n\n\nvar\n \nhalfColumn\n \n=\n \nnew\n \nColumn\n(\n6\n,\n0\n);\n\n\n\n//This column\ns content will span the right half of the Row\n\n\nvar\n \noffsetColumn\n \n=\n \nnew\n \nColumn\n(\n6\n,\n6\n);\n\n\n\n//This column\ns content will span the middle third of the Row\n\n\nvar\n \nmiddleColumn\n \n=\n \nnew\n \nColumn\n(\n4\n,\n4\n);\n\n\n\n//This column\ns width + offset = 16, so Flat Editor will throw an error\n\n\nvar\n \ninvalidColumn\n \n=\n \nnew\n \nColumn\n(\n8\n,\n8\n);\n\n\n\n\n\n\nColumns react to \nwindow size breakpoints\n, and can have\nspecific widths per breakpoint. These widths are set by the \nSetSize\n method,\nwhich takes three parameters: a \nScreenSize\n breakpoint, a width \nbyte\n, and\nan offset \nbyte\n:\n\n\nvar\n \nmyColumn\n \n=\n \nnew\n \nColumn\n(\n8\n,\n \n4\n);\n\n\n\nmyColumn\n.\nSetSize\n(\nScreenSize\n.\nxs\n,\n \n12\n,\n \n0\n);\n\n\n\n\n\n\nmyColumn\n will be 8 units wide and have an offset of 4 when the window width\nis larger than the \nxs\n breakpoint (768px by default). If the window width is\n\nless than\n the \nxs\n breakpoint, the column will be 12 units wide with no offset.\n\n\nColumns must \n.Start()\n and \n.End()\n within a \nRow\n.\n\n\nGrid\n\n\nThe Grid is a utility class that manages the grid, but also contains static methods\nthat can can return useful information, specifically:\n\n\n// Returns the currently active Row\n\n\nGrid\n.\nOpenRow\n()\n\n\n\n// Returns the current ScreenSize, based on breakpoint\n\n\nGrid\n.\nCurrentScreenSize\n()\n\n\n\n\n\n\nCurrentScreenSize()\n is useful as a way to change grid content based on ScreenSize\n(reducing font size or abbreviating a label, for example).\n\n\nForms\n\n\nCharts\n\n\nPanels\n\n\nAlerts\n\n\nWells\n\n\nButtons\n\n\nDropdowns\n\n\nTooltips\n\n\nPopovers\n\n\nNavs\n\n\nPagination\n\n\nBadges\n\n\nBars\n\n\nProgress Bars\n\n\nObjects", 
+            "title": "The Grid"
         }, 
         {
-            "location": "/components/#overview", 
-            "text": "", 
-            "title": "Overview"
-        }, 
-        {
-            "location": "/components/#containers", 
-            "text": "", 
+            "location": "/grid/#containers", 
+            "text": "Flat Editor replicates the responsive Bootstrap grid. Grids lay out window or\ninspector content in columns and rows:  void   OnGUI ()  { \n   Row . Start (); \n\n     var   columnA   =   new   Column ( 6 , 0 ); \n     var   columnB   =   new   Column ( 6 , 0 ); \n\n     columnA . Start (); \n       Typography . Title ( This is Column A ); \n     columnA . End (); \n\n     columnB . Start (); \n       Typography . Title ( This is Column B ); \n     columnB . End (); \n\n   Row . End ();  }", 
             "title": "Containers"
         }, 
         {
-            "location": "/components/#columns", 
-            "text": "", 
+            "location": "/grid/#rows", 
+            "text": "Rows are parent containers for columns, they track column position\n(GUILayoutOption won't work for our columns) and enforce horizontal margins.  Rows will automatically break if a line of columns extends beyond 12 units.\nHowever, the rows never \"lose\" column references - they preserve column\nlengths.  Rows are opened and closed by static functions  Row.Start()  and  Row.End() \nRows  must  be closed with  Row.End()  or Unity will throw a GUI error.  Rows cannot be nested  void   OnGUI ()  { \n   Row . Start (); \n     //Row content \n   Row . End ();  }", 
+            "title": "Rows"
+        }, 
+        {
+            "location": "/grid/#columns", 
+            "text": "Columns are objects that handle automatic layout-ing of GUI content,\narranging the stuff in them into neat, regular columns. By default, columns are\ndescribed in units of width out of 12 (like Bootstrap), and are  reactive , meaning\nthey will change their width based on window size.  Columns take two  bytes  as parameters in their constructor. The first is the width  value of the column: how many units (out of 12) the column content will\ncover. The second is the  offset  value of the column: how many column units of\nblank space will precede the column. A column's width and offset combined  cannot\nexceed 12 .  //This column s content will span the entire Row  var   fullColumn   =   new   Column ( 12 , 0 );  //This columns s content will span the left half of the Row  var   halfColumn   =   new   Column ( 6 , 0 );  //This column s content will span the right half of the Row  var   offsetColumn   =   new   Column ( 6 , 6 );  //This column s content will span the middle third of the Row  var   middleColumn   =   new   Column ( 4 , 4 );  //This column s width + offset = 16, so Flat Editor will throw an error  var   invalidColumn   =   new   Column ( 8 , 8 );   Columns react to  window size breakpoints , and can have\nspecific widths per breakpoint. These widths are set by the  SetSize  method,\nwhich takes three parameters: a  ScreenSize  breakpoint, a width  byte , and\nan offset  byte :  var   myColumn   =   new   Column ( 8 ,   4 );  myColumn . SetSize ( ScreenSize . xs ,   12 ,   0 );   myColumn  will be 8 units wide and have an offset of 4 when the window width\nis larger than the  xs  breakpoint (768px by default). If the window width is less than  the  xs  breakpoint, the column will be 12 units wide with no offset.  Columns must  .Start()  and  .End()  within a  Row .", 
             "title": "Columns"
         }, 
         {
-            "location": "/components/#grids", 
-            "text": "", 
-            "title": "Grids"
+            "location": "/grid/#grid", 
+            "text": "The Grid is a utility class that manages the grid, but also contains static methods\nthat can can return useful information, specifically:  // Returns the currently active Row  Grid . OpenRow ()  // Returns the current ScreenSize, based on breakpoint  Grid . CurrentScreenSize ()   CurrentScreenSize()  is useful as a way to change grid content based on ScreenSize\n(reducing font size or abbreviating a label, for example).", 
+            "title": "Grid"
         }, 
         {
-            "location": "/components/#glyphs", 
-            "text": "", 
-            "title": "Glyphs"
-        }, 
-        {
-            "location": "/components/#typography", 
-            "text": "", 
-            "title": "Typography"
-        }, 
-        {
-            "location": "/components/#headings", 
-            "text": "", 
-            "title": "Headings"
-        }, 
-        {
-            "location": "/components/#body", 
-            "text": "", 
-            "title": "Body"
-        }, 
-        {
-            "location": "/components/#blockquotes", 
-            "text": "", 
-            "title": "Blockquotes"
-        }, 
-        {
-            "location": "/components/#tables", 
-            "text": "", 
-            "title": "Tables"
-        }, 
-        {
-            "location": "/components/#forms", 
+            "location": "/grid/#forms", 
             "text": "", 
             "title": "Forms"
         }, 
         {
-            "location": "/components/#charts", 
+            "location": "/grid/#charts", 
             "text": "", 
             "title": "Charts"
         }, 
         {
-            "location": "/components/#panels", 
+            "location": "/grid/#panels", 
             "text": "", 
             "title": "Panels"
         }, 
         {
-            "location": "/components/#alerts", 
+            "location": "/grid/#alerts", 
             "text": "", 
             "title": "Alerts"
         }, 
         {
-            "location": "/components/#wells", 
+            "location": "/grid/#wells", 
             "text": "", 
             "title": "Wells"
         }, 
         {
-            "location": "/components/#buttons", 
+            "location": "/grid/#buttons", 
             "text": "", 
             "title": "Buttons"
         }, 
         {
-            "location": "/components/#dropdowns", 
+            "location": "/grid/#dropdowns", 
             "text": "", 
             "title": "Dropdowns"
         }, 
         {
-            "location": "/components/#tooltips", 
+            "location": "/grid/#tooltips", 
             "text": "", 
             "title": "Tooltips"
         }, 
         {
-            "location": "/components/#popovers", 
+            "location": "/grid/#popovers", 
             "text": "", 
             "title": "Popovers"
         }, 
         {
-            "location": "/components/#navs", 
+            "location": "/grid/#navs", 
             "text": "", 
             "title": "Navs"
         }, 
         {
-            "location": "/components/#pagination", 
+            "location": "/grid/#pagination", 
             "text": "", 
             "title": "Pagination"
         }, 
         {
-            "location": "/components/#badges", 
+            "location": "/grid/#badges", 
             "text": "", 
             "title": "Badges"
         }, 
         {
-            "location": "/components/#bars", 
+            "location": "/grid/#bars", 
             "text": "", 
             "title": "Bars"
         }, 
         {
-            "location": "/components/#progress-bars", 
+            "location": "/grid/#progress-bars", 
             "text": "", 
             "title": "Progress Bars"
         }, 
         {
-            "location": "/components/#objects", 
+            "location": "/grid/#objects", 
             "text": "", 
             "title": "Objects"
+        }, 
+        {
+            "location": "/typography/", 
+            "text": "Glyphs\n\n\nFlat Editor takes \nFont Awesome\n glyphs,\nand makes them available in the Unity Editor. \nCurrently\n glyphs are style-\nand font-bound, which means they can't yet be used freely in text\n\n\nTypography\n\n\nHeadings\n\n\nBody\n\n\nBlockquotes\n\n\nTables", 
+            "title": "Glyphs & Typography"
+        }, 
+        {
+            "location": "/typography/#glyphs", 
+            "text": "Flat Editor takes  Font Awesome  glyphs,\nand makes them available in the Unity Editor.  Currently  glyphs are style-\nand font-bound, which means they can't yet be used freely in text", 
+            "title": "Glyphs"
+        }, 
+        {
+            "location": "/typography/#typography", 
+            "text": "", 
+            "title": "Typography"
+        }, 
+        {
+            "location": "/typography/#headings", 
+            "text": "", 
+            "title": "Headings"
+        }, 
+        {
+            "location": "/typography/#body", 
+            "text": "", 
+            "title": "Body"
+        }, 
+        {
+            "location": "/typography/#blockquotes", 
+            "text": "", 
+            "title": "Blockquotes"
+        }, 
+        {
+            "location": "/typography/#tables", 
+            "text": "", 
+            "title": "Tables"
+        }, 
+        {
+            "location": "/forms/", 
+            "text": "", 
+            "title": "Forms"
+        }, 
+        {
+            "location": "/panels/", 
+            "text": "", 
+            "title": "Panels & Alerts"
+        }, 
+        {
+            "location": "/buttonsnavs/", 
+            "text": "", 
+            "title": "Buttons & Navigation"
+        }, 
+        {
+            "location": "/objects/", 
+            "text": "", 
+            "title": "Unity Objects"
         }, 
         {
             "location": "/customize/", 
             "text": "", 
             "title": "Customize"
+        }, 
+        {
+            "location": "/code/", 
+            "text": "", 
+            "title": "Code"
         }
     ]
 }
